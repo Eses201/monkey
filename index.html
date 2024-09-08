@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            text-align: center;
+        }
+        #container button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .small-text {
+            font-size: 0.9em;
+        }
+        #no {
+            position: relative;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h1 id="question">Do you love me?</h1>
+    <div id="first-gif">
+        <div class="tenor-gif-embed" data-postid="17723396" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/monkey-cute-blush-shy-gif-17723396">Monkey Cute GIF</a>from <a href="https://tenor.com/search/monkey-gifs">Monkey GIFs</a></div> 
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+    <br>
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+    
+    <div id="second-screen" class="hidden">
+        <div class="tenor-gif-embed" data-postid="11775476126234681523" data-share-method="host" data-aspect-ratio="1.09333" data-width="100%"><a href="https://tenor.com/view/dancin-monkey-gif-11775476126234681523">Dancin Monkey Sticker</a>from <a href="https://tenor.com/search/dancin+monkey-stickers">Dancin Monkey Stickers</a></div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <h2>Hehehe, I knew it!</h2>
+        <p class="small-text">I love you too 🫦</p>
+    </div>
+</div>
+
+<script>
+    const yesButton = document.getElementById("yes");
+    const noButton = document.getElementById("no");
+    const question = document.getElementById("question");
+    const firstGif = document.getElementById("first-gif");
+    const secondScreen = document.getElementById("second-screen");
+
+    yesButton.addEventListener("click", () => {
+        // Hide the first screen
+        question.classList.add("hidden");
+        firstGif.classList.add("hidden");
+        yesButton.classList.add("hidden");
+        noButton.classList.add("hidden");
+
+        // Show the second screen
+        secondScreen.classList.remove("hidden");
+    });
+
+    noButton.addEventListener("mouseover", () => {
+        const randomX = Math.floor(Math.random() * 300) - 150;
+        const randomY = Math.floor(Math.random() * 300) - 150;
+noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    });
+</script>
+
+</body>
+</html>
